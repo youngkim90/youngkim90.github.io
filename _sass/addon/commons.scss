@@ -155,7 +155,9 @@ footer {
 /* fontawesome icons */
 i {
   &.far,
+  &.fab,
   &.fas {
+    font-size: 1.5em;
     @extend %no-cursor;
   }
 }

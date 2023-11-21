@@ -28,20 +28,20 @@
   --checkbox-checked-color: var(--link-color);
   --img-bg: radial-gradient(circle, rgb(22, 22, 24) 0%, rgb(32, 32, 32) 100%);
   --shimmer-bg: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(58, 55, 55, 0.4) 50%,
-    rgba(255, 255, 255, 0) 100%
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(58, 55, 55, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
   );
 
   /* Sidebar */
-  --site-title-color: #717070;
-  --site-subtitle-color: #868686;
-  --sidebar-bg: #1e1e1e;
+  --site-title-color: #a9a9a9;
+  --site-subtitle-color: #a9a9a9;
+  --sidebar-bg: #282727;
   --sidebar-border-color: #292929;
   --sidebar-muted-color: #868686;
   --sidebar-active-color: rgb(255, 255, 255, 0.95);
-  --sidebar-hover-bg: #262626;
+  --sidebar-hover-bg: #3a3a3a;
   --sidebar-btn-bg: #232328;
   --sidebar-btn-color: #787878;
   --avatar-border-color: rgb(206, 206, 206, 0.9);
@@ -70,7 +70,7 @@
   --card-bg: #1e1e1e;
   --card-hovor-bg: #464d51;
   --card-shadow: rgb(21, 21, 21, 0.72) 0 6px 18px 0,
-    rgb(137, 135, 135, 0.24) 0 0 0 1px;
+  rgb(137, 135, 135, 0.24) 0 0 0 1px;
   --kbd-wrap-color: #6a6a6a;
   --kbd-text-color: #d3d3d3;
   --kbd-bg-color: #242424;
@@ -133,12 +133,12 @@
 
   #archives li:nth-child(odd) {
     background-image: linear-gradient(
-      to left,
-      rgb(26, 26, 30),
-      rgb(39, 39, 45),
-      rgb(39, 39, 45),
-      rgb(39, 39, 45),
-      rgb(26, 26, 30)
+        to left,
+        rgb(26, 26, 30),
+        rgb(39, 39, 45),
+        rgb(39, 39, 45),
+        rgb(39, 39, 45),
+        rgb(26, 26, 30)
     );
   }
 
@@ -148,4 +148,6 @@
   #disqus_thread {
     color-scheme: none;
   }
-} /* dark-scheme */
+}
+
+/* dark-scheme */

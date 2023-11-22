@@ -159,6 +159,12 @@ i {
     font-size: 1.3em;
     @extend %no-cursor;
   }
+
+  &.fa-adjust, &.fa-github, &.fa-envelope {
+    font-size: var(--banner-button-font-size);
+    color: var(--banner-button-color);
+    @extend %no-cursor;
+  }
 }
 
 /* --- Panels --- */

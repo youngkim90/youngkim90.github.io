@@ -41,7 +41,6 @@ body strong {
 }
 
 /* --- Typography --- */
-/* --- Typography --- */
 
 @for $i from 1 through 5 {
   h#{$i} {
@@ -165,7 +164,9 @@ i {
     @extend %no-cursor;
   }
 
-  &.fa-adjust, &.fa-github, &.fa-envelope {
+  &.fa-adjust,
+  &.fa-github,
+  &.fa-envelope {
     font-size: var(--banner-button-font-size);
     color: var(--banner-button-color);
     @extend %no-cursor;

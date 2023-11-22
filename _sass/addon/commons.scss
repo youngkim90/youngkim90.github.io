@@ -36,6 +36,11 @@ body {
   font-family: $font-family-base;
 }
 
+body strong {
+  color: var(--text-strong-color);
+}
+
+/* --- Typography --- */
 /* --- Typography --- */
 
 @for $i from 1 through 5 {

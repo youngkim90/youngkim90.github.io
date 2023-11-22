@@ -110,6 +110,23 @@ blockquote {
     > p:last-child {
       margin-bottom: 0;
     }
+
+    &.prompt-danger strong,
+    &.prompt-danger h3,
+    &.prompt-danger h2,
+    &.prompt-danger {
+      color: var(--prompt-danger-text-color);
+    }
+
+    &.prompt-danger {
+      color: var(--prompt-danger-text-color);
+
+      strong,
+      h3,
+      h2 {
+        color: var(--prompt-danger-text-color);
+      }
+    }
   }
 
   @include prompt('tip', '\f0eb', 'regular');
@@ -161,7 +178,7 @@ i {
   &.fab,
   &.fas {
     font-size: 1.3em;
-    
+
     @extend %no-cursor;
   }
 

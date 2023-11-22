@@ -161,6 +161,7 @@ i {
   &.fab,
   &.fas {
     font-size: 1.3em;
+    
     @extend %no-cursor;
   }
 
@@ -169,6 +170,7 @@ i {
   &.fa-envelope {
     font-size: var(--banner-button-font-size);
     color: var(--banner-button-color);
+
     @extend %no-cursor;
   }
 }

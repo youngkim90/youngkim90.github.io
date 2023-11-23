@@ -1,7 +1,7 @@
 ---
 title: 스프링부트 인메모리 DB 테스트
 date: 2022-12-15 00:00:00 +0900
-categories: [ Programming, Spring ]
+categories: [ Programming, SpringBoot ]
 tags: [ 스프링부트, 인메모리, 데이터베이스, inmemory database, h2 ]
 image:
   path: /assets/img/logo/spring_logo.png

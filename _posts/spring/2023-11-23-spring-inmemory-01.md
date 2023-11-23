@@ -1,5 +1,5 @@
 ---
-title: 스프링부트 인메모리 DB 테스트
+title: 스프링부트 인메모리 DB 테스트하기
 date: 2022-12-15 00:00:00 +0900
 categories: [ Programming, SpringBoot ]
 tags: [ 스프링부트, 인메모리, 데이터베이스, inmemory database, h2 ]
@@ -7,8 +7,6 @@ image:
   path: /assets/img/logo/spring_logo.png
   content: false
 ---
-
-# 스프링부트 인메모리 DB 테스트
 
 스프링부트 환경에서 **인메모리 데이터베이스**는 **테스트** 목적으로 종종 사용된다.  
 데이터베이스 커넥션이 필요하거나 데이터 확인이 필요한 테스트의 경우 로컬DB or 테스트DB를 사용할 수도 있지만,

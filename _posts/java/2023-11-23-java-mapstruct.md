@@ -1,5 +1,5 @@
 ---
-title: MapStruct를 활용한 엔티티, DTO 매핑
+title: MapStruct를 활용한 엔티티 <-> DTO 매핑
 date: 2022-08-20 00:00:00 +0900
 categories: [ Programming, Java ]
 tags: [ java, mapstruct, mapper ]
@@ -8,16 +8,16 @@ image:
   content: false
 ---
 
-**MapStruct**는 자바 언어를 활용한 코드 생성 기반의 객체 매핑용 라이브러리이다.  
+**MapStruct**는 자바 언어를 활용한 코드 생성 기반의 **객체 매핑용** 라이브러리이다.  
 어노테이션 등을 활용해 객체 간의 매핑 작업을 편리하게 수행할 수 있도록 지원하고, 주로 **DTO**(Data Transfer Object)와 **엔티티**(Entity) 등의 객체를 변환하기 위한 용도로
 사용된다.  
 반복적이고 번거로운 매핑 코드를 빌드 시 자동으로 생성하여 개발자가 코드를 간결하게 작성할 수 있도록 도움을 주기 때문에 자주 사용된다.
 
 ## 1. 환경설정
 
-mapstrut을 사용하기 위해서는 다음과 같은 의존성을 추가해야 한다.
+**mapstrut**을 사용하기 위해서는 다음과 같은 의존성을 추가해야 한다.
 
-Gradle
+**Gradle**
 
 ``` gradle
 // lombok
@@ -29,9 +29,9 @@ implementation 'org.mapstruct:mapstruct:1.4.2.Final'
 annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 ```
 
-Maven
+**Maven**
 
-``` maven
+``` xml
 <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 // mapstruct
 <dependency>
@@ -100,7 +100,7 @@ public class MemberResultDTO {
 ```
 
 예시를 위해 `Member`엔티티 와 엔티티가 변환할 or 변환될 DTO 클래스를 생성하였다.  
-이제 **mapstruct**를 사용하여 엔티티와 DTO를 매핑시켜 줄 Mapper 인터페이스를 생성해보자.
+이제 엔티티와 DTO를 매핑시켜 줄 **Mapper 인터페이스**를 생성해보자.
 
 ``` java
 @Mapper(
@@ -120,7 +120,7 @@ public interface MemberMapper {
 target/generated-sources/annotations/..) 하위에 생성된다.
 `@Mapper` 어노테이션에는 다양한 옵션을 설정할 수 있는데, 자세한 내용은
 [mapstruct 공식문서](https://mapstruct.org/documentation/stable/reference/html/#mapper-configuration)를 참고하면 된다.
-기본적으로 매핑되지 않은 즉, 엔티티와 DTO 간의 이름이 다른 필드들은 매핑하지 않는 설정과 필드 값이 null 인 필드는 매핑하지 않는 설정만 추가하였다.
+위 코드에서는 엔티티와 DTO 간의 이름이 다른 필드들은 매핑하지 않는 옵션과, 필드 값이 null 인 필드는 매핑하지 않는 옵션만 추가하였다.
 
 이제 `MemberMapper`를 사용하여 **MemberRequestDTO -> Member**, **Member -> MemberResultDTO** 객체로의 매핑을 시켜보자.
 
@@ -162,7 +162,7 @@ public class MemberMapperImpl implements MemberMapper {
 }
 ```
 
-이처럼 mapstruct 기능을 활용하면 위와 같이 엔티티와 DTO를 매핑시켜주는 코드를 자동으로 생성할 수 있다.  
+이처럼 mapstruct 라이브러리를 활용하면 위와 같이 엔티티와 DTO를 매핑시켜주는 코드를 compile 시에 자동으로 생성할 수 있다.  
 이제 `MemberMapper`를 사용하여 엔티티와 DTO를 매핑시켜보자.
 
 ``` java
@@ -174,8 +174,8 @@ public class MemberMapperImpl implements MemberMapper {
   }
 ```
 
-변환이 필요한 곳에서 `MemberMapper` 인터페이스를 호출하여 **MemberRequestDTO -> Member**로 생성한 후에 jpa로 insert 후에 **Member ->
-MemberResultDTO**로 변환하여 반환하는 작업이 간단하게 수행된다.  
+`MemberMapper` 인터페이스를 호출하여 **MemberRequestDTO -> Member**로 매핑 및 생성하여 jpa로 insert 하였고, **Member ->
+MemberResultDTO**로 변환하여 반환하는 작업이 간단하게 수행된 것을 확인할 수 있다.
 이 후로는 필요 시 Mapper 인터페이스와 변환할 메소드만 정의해주어 사용하면 되므로 코드량도 줄일 수 있고 매핑도 간단해진다.
 
 물론 mapstruct를 사용하지 않고 jackson 라이브러리의 **ObjectMapper**를 사용하여 변환할 수도 있지만, mapstruct에 비해 코드가 깔끔하지 않고,

@@ -1,6 +1,6 @@
 ---
 title: 코틀린 기본1 - 코틀린이란?(vs자바)
-date: 2024-01-31 00:00:00 +0900
+date: 2024-01-30 00:00:00 +0900
 categories: [ Programming, Kotlin ]
 tags: [ kotlin, java ]
 image:

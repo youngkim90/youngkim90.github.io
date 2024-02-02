@@ -88,7 +88,7 @@ fun fail(message: String): Nothing {
 }
 
 val a: String? = null
-val b = a ?: fail("a is Null") // non-null 타입으로 자동 추론된다.
+val b = a ?: fail("a is Null")
 // 예외 발생
 // Exception in thread "main" java.lang.IllegalArgumentException: a is Null
 ```

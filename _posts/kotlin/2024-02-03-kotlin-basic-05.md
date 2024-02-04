@@ -40,19 +40,23 @@ class Coffee(
 ## class 선언과 사용
 
 코틀린에서 class는 **new** 키워드를 사용하지 않고 객체 인스턴스를 생성할 수 있다.  
-또한 위에서 언급한대로 class의 **var, val** 멤버변수들의 **getter, setter**는 자동으로 생성되고 아래와 같이 사용할 수 있다.
+또한 위에서 언급한대로 class의 **var, val** 멤버변수들의 **getter, setter**는 자동으로 생성된다.  
+아래는 class 생성자를 호출하는 다양한 방식과 멤버변수를 사용하는 방법이다.
 
 ```kotlin
-val coffee = Coffee() // new 키워드 없이 객체 생성
+// new 키워드 없이 객체 생성
+val coffee1 = Coffee() // 기본 생성자로 객체 생성
+val coffee2 = Coffee("라떼", 4000) // 생성자 매개변수 값을 지정하여 객체 생성
+val coffee3 = Coffee(name = "라떼", price = 4000) // 생성자 매개변수의 이름과 값을 함께 지정하여 객체 생성 
 
 // class의 멤버변수에 아래와 같이 값을 저장한다. 
 // set~ 방식으로 저장하진 않지만, 내부적으로 setter 메소드가 호출된다.
-coffee.name = "아메리카노"
-coffee.price = 3000
+coffee1.name = "콜드브루"
+coffee1.price = 3000
 
 // class의 멤버변수를 아래와 같이 값을 읽어온다.
 // get~ 방식으로 불러오진 않지만, 내부적으로 getter 메소드가 호출된다.
-printlns(coffee.name) // 아메리카노
+printlns(coffee1.name) // 콜드브루
 ```
 
 코틀린에서는 위에 처럼 get~, set~ 메소드를 호출하지 않고 변수를 직접 선언하여 값을 활용하는 방식으로 **getter, setter**를 사용하게 된다.

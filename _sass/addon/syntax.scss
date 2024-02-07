@@ -92,7 +92,9 @@ html {
     -ms-user-select: none;
     user-select: none;
   }
-} /* .highlight */
+}
+
+/* .highlight */
 
 code {
   -webkit-hyphens: none;
@@ -262,6 +264,7 @@ div {
       @include ml-mr(0);
 
       border-radius: $base-radius;
+      margin-bottom: 4rem;
     }
 
     .code-header {
@@ -277,10 +280,8 @@ div {
         height: $code-dot-size;
         border-radius: 50%;
         background-color: var(--code-header-muted-color);
-        box-shadow: ($code-dot-size + $code-dot-gap) 0 0
-            var(--code-header-muted-color),
-          ($code-dot-size + $code-dot-gap) * 2 0 0
-            var(--code-header-muted-color);
+        box-shadow: ($code-dot-size + $code-dot-gap) 0 0 var(--code-header-muted-color),
+        ($code-dot-size + $code-dot-gap) * 2 0 0 var(--code-header-muted-color);
       }
 
       span {

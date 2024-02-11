@@ -13,7 +13,7 @@ image:
 코틀린에서 컬렉션 자료구조는 크게 **`List`**, **`Set`**, **`Map`** 세 가지로 구분된다.
 각 자료구조 모두 **불변(immutable)** 과 **가변(mutable)** 형식으로 나누어 사용할 수 있다.
 불변 형식의 자료구조는 구조의 변경이 불가능하며, 가변 형식의 자료구조는 구조를 변경할 수 있다.  
-아래 컬렉션 계층 다이어그램을 통해 각 컬렉션의 상속관계를 확인할 수 있다.  
+아래 컬렉션 계층 다이어그램을 통해 각 컬렉션의 **상속관계**를 확인할 수 있다.  
 ![컬렉션 계층 다이어그램](https://kotlinlang.org/docs/images/collections-diagram.png)
 
 코틀린 표준 라이브러리에 등록된 **Colletion 함수**들을 사용하여 자료구조에 대한 선언과 다양한 연산을 수행할 수 있다.
@@ -22,9 +22,8 @@ image:
 
 ## List
 
-**`List`** 자료구조는 순서가 있는 컬렉션으로, 중복된 원소를 가질 수 있다.
-불변 형태의 **List**와 가변 형태의 **MutableList**
-인터페이스로 나누어 간단하게 선언이 가능하며 선언 방식은 다음과 같다.
+**`List`** 자료구조는 순서가 있는 컬렉션으로, 중복된 원소를 가질 수 있다.  
+불변 형태의 **List**와 가변 형태의 **MutableList** 인터페이스로 나누어 간단하게 선언이 가능하며 선언 방식은 다음과 같다.
 
 ```kotlin
 // Immutable list
@@ -63,9 +62,8 @@ arrayList.add(3)
 
 ## Set
 
-**`Set`** 자료구조는 순서를 보장하지 않는 컬렉션이다. 또한 중복된 원소를 가질 수 없다.
-**Set** 자료구조는 불변 형태의 **Set**과 가변 형태의 **MutableSet**
-인터페이스로 나누어 간단하게 선언이 가능하며 선언 방식은 다음과 같다.
+**`Set`** 자료구조는 순서를 보장하지 않는 컬렉션이다. 또한 중복된 원소를 가질 수 없다.  
+불변 형태의 **Set**과 가변 형태의 **MutableSet** 인터페이스로 나누어 간단하게 선언이 가능하며 선언 방식은 다음과 같다.
 
 ```kotlin
 // Immutable set
@@ -73,10 +71,10 @@ val alphabetSet = setOf("a", "b", "c")
 
 // Mutable set
 val mutableAlphabetSet = mutableSetOf<String>().apply {
-  add(1)
-  add(2)
-  add(3)
-  add(3) // 중복된 원소는 추가되지 않는다.
+  add("a")
+  add("b")
+  add("c")
+  add("c") // 중복된 원소는 추가되지 않는다.
 }
 ```
 
@@ -86,7 +84,7 @@ val mutableAlphabetSet = mutableSetOf<String>().apply {
 
 ## Map
 
-**`Map`** 자료구조는 **Key-Value** 쌍으로 이루어진 컬렉션이다. **Key**는 중복될 수 없지만 **Value**는 중복될 수 있다.
+**`Map`** 자료구조는 **Key-Value** 쌍으로 이루어진 컬렉션이다. **Key**는 중복될 수 없지만 **Value**는 중복될 수 있다.  
 List, Set과 마찬가지로 **Map** 자료구조도 불변 형태의 **Map**과 가변 형태의 **MutableMap**
 인터페이스로 나누어 간단하게 선언이 가능하며 선언 방식은 다음과 같다.
 

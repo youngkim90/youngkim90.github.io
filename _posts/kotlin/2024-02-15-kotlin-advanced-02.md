@@ -52,7 +52,7 @@ fun main() {
 
 코틀린에서 **`sealed class`** 는 상속받은 하위클래스를 **제한 조건**에 따라 정의하기 위한 클래스이다.  
 **`sealed class`** 는 다른 패키지나 모듈에서는 상속 받을 수 없으며, 같은 파일 내에서만 상속 받을 수 있다.
-아래에서 **sealed class**가 하위크래스를 제한하는 예시와 **제한하는 이유**에 대해서 설명한다.
+아래에서 **sealed class**가 하위클래스를 제한하는 이유와 예시를 확인한다.
 
 ```kotlin
 // sealed class는 다른 패키지나 모듈에서는 상속이 불가능하다.
@@ -78,8 +78,8 @@ object DeveloperPool {
 
 위의 예제와 같이 when문에서 **sealed class**를 사용하면 **else**를 정의하지 않아도 컴파일 에러가 발생하지 않는다.  
 그 이유는 **sealed class**가 같은 파일 내에서만 클래스를 상속할 수 있다는 **제한 조건**에 따라 정의하기 때문이다.
-즉, **Developer** 클래스를 상속받은 클래스는 **BackendDeveloper**와 **FrontendDeveloper** 클래스 밖에 없다는 것을 컴파일러가 알기 때문에
-**else**를 정의하지 않아도 컴파일 에러가 발생하지 않는다.  
+즉, **Developer** 클래스를 상속받은 클래스는 **BackendDeveloper**와 **FrontendDeveloper** 클래스 밖에 없다는 것을
+컴파일러가 인지하고 있기 때문에 **else**를 정의하지 않아도 컴파일 에러가 발생하지 않는다.  
 만약 **sealed class**를 상속받은 클래스가 추가되면 어떻게 될까?
 
 ```kotlin
@@ -99,8 +99,8 @@ object DeveloperPool {
 }
 ```
 
-위와 같이 sealed class를 상속받은 클래스가 추가되는 경우 when문 내에서 컴파일러가 **AndroidDeveloper**를
+위와 같이 **sealed class**를 상속받은 클래스가 추가되는 경우 when문 내에서 컴파일러가 **AndroidDeveloper**를
 sealed class를 상속받은 클래스로 인지하고 있기 때문에 케이스로 추가해주지 않으면 컴파일 에러가 발생하게 된다.  
-이와 같이 sealed class는 같은 파일 내에서만 상속한다는 제한 조건을 가지고 있는 대신,
-sealed class를 상속받은 클래스를 컴파일러가 명확히 인지하여 when문 내에서 명확하게 케이스 정의가 가능해진다.
-단순히 else로 정의해버릴 때 발생할 수 있는 예기치 못한 에러가 발생할 확률을 줄이 수 있는 효과가 있다.
+이와 같이 sealed class는 같은 파일 내에서만 상속한다는 **제한 조건**을 가지고 있는 대신,
+sealed class를 상속받은 클래스를 컴파일러가 인지하게 되어 when문 내에서 명확하게 케이스 정의가 가능해진다.
+단순히 else로 정의해버릴 때 발생할 수 있는 예기치 못한 에러가 발생할 확률을 줄일 수 있는 효과가 있다.

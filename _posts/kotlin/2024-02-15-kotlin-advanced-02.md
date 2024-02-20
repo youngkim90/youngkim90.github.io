@@ -1,5 +1,5 @@
 ---
-title: 코틀린 심화1 - Data Class와 Sealed Class
+title: 코틀린 심화2 - Data Class와 Sealed Class
 date: 2024-02-15 00:00:00 +0900
 categories: [ Programming, Kotlin ]
 tags: [ kotlin, data class, sealed class ]

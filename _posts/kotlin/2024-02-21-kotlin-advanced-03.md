@@ -1,6 +1,6 @@
 ---
 title: 코틀린 심화3 - 싱글톤과 동반객체
-date: 2024-02-15 00:00:00 +0900
+date: 2024-02-21 00:00:00 +0900
 categories: [ Programming, Kotlin ]
 tags: [ kotlin, singleton, companion object ]
 image:

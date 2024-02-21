@@ -8,7 +8,7 @@ image:
   content: false
 ---
 
-## singleton
+## **singleton**
 
 코틀린에서는 **`object`** 키워드를 사용하여 **`싱글톤`** 객체를 생성할 수 있다.
 > `싱글톤`은 인스턴스 하나를 공유하여 사용하는 방식을 의미한다.(자바의 static과 유사하다.)
@@ -55,7 +55,7 @@ fun main() {
 
 ---
 
-## companion object
+## **companion object**
 
 코틀린에서는 클래스 내부에서 **`companion object`** 키워드를 사용하여 **동반객체**를 생성할 수 있다.
 동반객체 내부에 선언된 변수와 메소드는 클래스의 정적 멤버로 사용되며, 클래스에서 직접 접근이 가능해진다.

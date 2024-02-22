@@ -4,7 +4,7 @@ date: 2024-02-22 00:00:00 +0900
 categories: [ Database, Modeling ]
 tags: [ Modeling, 데이터베이스 모델링, 모델링 과정 ]
 image:
-  path: /assets/img/logo/db_logo.png
+  path: /assets/img/logo/modeling_logo.png
   content: false
 ---
 

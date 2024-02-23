@@ -49,8 +49,8 @@ fun MyClass?.printNullOrNotNull() {
 }
 
 fun main() {
-  MyClass().printMessage() // 멤버 함수 출력
-  MyClass().printMessage("Goodbye") // 확장 함수 출력
+  MyClass().printMessage() // 멤버 함수 출력 -> Hello
+  MyClass().printMessage("Goodbye") // 오버로딩 확장 함수 출력 -> Goodbye
 
   var myClass: MyClass? = null
   MyClass.printNullOrNotNull() // null

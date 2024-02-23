@@ -1,2 +1,3 @@
-# youngkim90.github.io
-개발자 기술블로그
+# Welcome to My Github Blog
+
+### Click here: [youngkim90.github.io](https://youngkim90.github.io)

@@ -313,6 +313,8 @@ sup {
 
       th {
         @extend %table-cell;
+        border-width: 0.1rem;
+        border-color: rgba(1, 68, 1, 0.64);
       }
     }
 
@@ -330,6 +332,8 @@ sup {
 
         td {
           @extend %table-cell;
+          border-width: 0.1rem;
+          border-color: rgba(1, 68, 1, 0.64);
         }
       }
     }

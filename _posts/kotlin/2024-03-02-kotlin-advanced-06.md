@@ -10,7 +10,7 @@ image:
 
 ## **lateinit(지연초기화)**
 
-코틀린에서 **`lateinit`** 키워드는 클래스의 프로퍼티를 객체 생성 시점이 아닌 그 이후에 초기화될 때 사용한다.
+코틀린에서 **`lateinit`** 키워드는 클래스의 프로퍼티를 객체 생성시점이 아닌 그 이후에 초기화할 때 사용한다.
 **lateinit**은 **var** 가변변수에만 선언 가능하며, **non-null** 타입으로 선언해야 한다.
 
 ```kotlin
@@ -33,7 +33,7 @@ fun main() {
 
   test.printText() // 안녕하세요
   test.text = "Hello" // 외부에서 지연변수에 값 할당
-  test.printText() // Hello
+  test.printText() // 초기화 완료 \n Hello
 }
 ```
 
@@ -43,7 +43,7 @@ fun main() {
 ## **lazy(지연로딩)**
 
 코틀린에서 **`lazy`** 함수는 **변수 초기화 시점을 호출 시점으로 늦추어 성능을 향상**시키기 위해 사용된다.
-**lazy** 함수는 **val** 불변변수에만 사용 가능하며, **by lazy** 키워드를 사용하여 **지연로딩**을 구현할 수 있다.
+**lazy** 함수는 **val** 불변변수에만 사용 가능하며, **`by lazy`** 키워드를 사용하여 **지연로딩**을 구현할 수 있다.
 
 ```kotlin
 class HelloBot {

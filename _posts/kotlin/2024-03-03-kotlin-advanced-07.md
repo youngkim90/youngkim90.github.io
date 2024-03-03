@@ -50,7 +50,9 @@ for ((name, job) in map) {
 
 ```kotlin
 val triple = Triple("A", "B", "C")
-println(triple) // (A, B, C)
+println(triple.first) // A
+println(triple.second) // B
+println(triple.third) // C
 
 // Triple 객체 복사
 val newTriple = triple.copy(third = "D")

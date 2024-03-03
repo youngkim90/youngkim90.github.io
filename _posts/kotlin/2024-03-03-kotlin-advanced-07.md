@@ -1,6 +1,6 @@
 ---
 title: 코틀린 심화7 - Tuples
-date: 2024-03-02 00:00:00 +0900
+date: 2024-03-03 00:00:00 +0900
 categories: [ Programming, Kotlin ]
 tags: [ kotlin, tuples, pair, triple ]
 image:

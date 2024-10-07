@@ -1,6 +1,6 @@
 ---
-title: Spring Batch 시작하기 (with KIDO by DEVOCEAN)
-date: 2021-07-16 00:00:00 +0900
+title: Spring Batch 시작하기 (with DEVOCEAN)
+date: 2024-10-07 00:00:00 +0900
 categories: [ Framework, Spring-Batch ]
 tags: [ 스프링 배치, Spring-Batch, 스프링 ]
 image:
@@ -10,11 +10,11 @@ image:
 
 # Spring Batch Study 1
 
-DEVOCEAN에서 KIDO님의 Spring Batch 연재글을 기반으로 스터디를 모집하였고 운좋게? 나도 참가할 수 있었다.  
-스터디를 진행하며 KIDO님의 연재글을 기반으로 실습한 내용을 github에 올리고 공부하고 정리한 내용을 블로그에 올리려고 한다.  
-스프링 배치 스터디의 첫번째 주제는 '**SpringBatch 빠르게 시작하기**' 이다.
+DEVOCEAN에서 KIDO님의 Spring Batch 연재글을 기반으로 스터디를 진행할 인원을 모집하였고 운좋게? 나도 참여할 기회가 주어져서 열심히 스터디를 해보려고 한다.
+스터디를 진행하며 KIDO님의 연재글을 기반으로 실습한 내용을 github에 올리고 공부하고 정리한 내용을 블로그에 포스팅할 것이다.
 
-참고 : [[SpringBatch 연재 01] SpringBatch 빠르게 시작하기](https://devocean.sk.com/blog/techBoardDetail.do?ID=166164#none)
+스프링 배치 스터디의 첫번째 주제는 '**SpringBatch 빠르게 시작하기**' 이다.  
+*참고 : [[SpringBatch 연재 01] SpringBatch 빠르게 시작하기](https://devocean.sk.com/blog/techBoardDetail.do?ID=166164#none)*
 
 ---
 

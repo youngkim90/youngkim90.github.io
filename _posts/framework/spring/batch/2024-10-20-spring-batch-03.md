@@ -20,7 +20,7 @@ Spring Batch의 데이터 처리 방식으로 사용되는 **Chunk Model**과 **
 
 Chunk Model이란 처리할 데이터를 **일정 단위(청크)**로 처리하는 방식이다.
 
-## Chunk 모델 알아보기
+### Chunk 모델 알아보기
 
 - 대량의 데이터를 효율적으로 처리할 수 있도록 도와주며, **트랜잭션 관리**와 **성능 최적화**에 유리하다.
 - `ChunkOrientedTasklet`은 청크 처리를 지원하는 **Tasklet**의 구체적인 클래스 역할을 수행한다.
@@ -34,6 +34,15 @@ Chunk Model이란 처리할 데이터를 **일정 단위(청크)**로 처리하�
   - 청크 크기만큼 `ItemReader`가 데이터를 읽어 들인다.
   - 읽어들인 `ItemProcessor`로 전달하고, 데이터를 처리한다.
   - `ItemProcessor`를 처리하고난 청크 단위 데이터가 `ItemWriter`로 전달되어 **저장**하거나, **파일처리**를 수행한다.
+
+### Chunk-oriented processing
+
+![Chunk-oriented processing](https://docs.spring.io/spring-batch/reference/_images/chunk-oriented-processing-with-item-processor.png)
+
+*참고: [SpringBatch 공식 문서](https://docs.spring.io/spring-batch/reference/step/chunk-oriented-processing.html)*
+
+- Spring Batch는 가장 일반적인 구현 방식으로 "Chunk-oriented(청크 지향)" 처리 스타일을 사용한다.
+- **한 번에 하나**씩 데이터를 읽고 트랜잭션 경계 내에서 쓰여지는 **'청크'**를 만드는 것을 말한다.
 
 <br>
 

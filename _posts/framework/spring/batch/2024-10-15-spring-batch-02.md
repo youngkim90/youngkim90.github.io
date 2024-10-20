@@ -1,8 +1,8 @@
 ---
-title: Spring Batch 아키텍처와 기본 프로세스 (with DEVOCEAN)
+title: Spring Batch - 아키텍처와 기본 프로세스
 date: 2024-10-15 00:00:00 +0900
 categories: [ Framework, Spring-Batch ]
-tags: [ 스프링 배치, Spring-Batch, 스프링 ]
+tags: [ 스프링 배치, Spring-Batch, Job, Step, ItemReader, ItemProcessor, ItemWriter ]
 image:
   path: /assets/img/logo/spring_logo.png
   content: false
@@ -90,31 +90,31 @@ image:
 ### 스프링 배치 저장 정보
 
 - **JobInstance**
-    - JobInstance는 Job **이름과 전달 파라미터**를 정의한다.
-    - Job이 중단되는 경우 다음 실행할때 중단 이후부터 실행하도록 지원한다.
+  - JobInstance는 Job **이름과 전달 파라미터**를 정의한다.
+  - Job이 중단되는 경우 다음 실행할때 중단 이후부터 실행하도록 지원한다.
 - **JobExecution**
-    - Job의 물리적인 실행을 나타낸다.
-    - JobInstance와 달리 동일한 Job이 여러번 수행될 수 있다.(1:N)
-    - Job의 실행 이력 및 상태 정보(성공/실패, 시작 시간, 종료 시간 등)를 기록한다.
-    - 특정 Step에서 실패했다면, 실패한 Step 이후부터 다시 실행할 수 있도록 Job의 상태를 기록한다.
+  - Job의 물리적인 실행을 나타낸다.
+  - JobInstance와 달리 동일한 Job이 여러번 수행될 수 있다.(1:N)
+  - Job의 실행 이력 및 상태 정보(성공/실패, 시작 시간, 종료 시간 등)를 기록한다.
+  - 특정 Step에서 실패했다면, 실패한 Step 이후부터 다시 실행할 수 있도록 Job의 상태를 기록한다.
 - **Job-ExecutionContext**
-    - 각각의 JobExecution에서 처리 단계와 같은 메타 정보들을 공유하는 영역이다.
-    - Job내의 모든 Step에서 공유된다. 즉, Step 간에 데이터를 공유해야 할 경우, Job-ExecutionContext를 사용하여 데이터를 주고받을 수 있다.
-    - 스프링 배치가 **프레임워크 상태**를 기록하는데 사용하며, 또한 애플리케이션에서 ExecutionContext에 액세스 하는 수단도 제공된다.
-    - Job이 중단되거나 실패했을 때, 재시작 시 필요한 상태를 저장한다.
-    - 데이터는 바이트 스트림 형태로 저장되기 때문에 반드시 java.io.Serializable를 구현해야한다.
+  - 각각의 JobExecution에서 처리 단계와 같은 메타 정보들을 공유하는 영역이다.
+  - Job내의 모든 Step에서 공유된다. 즉, Step 간에 데이터를 공유해야 할 경우, Job-ExecutionContext를 사용하여 데이터를 주고받을 수 있다.
+  - 스프링 배치가 **프레임워크 상태**를 기록하는데 사용하며, 또한 애플리케이션에서 ExecutionContext에 액세스 하는 수단도 제공된다.
+  - Job이 중단되거나 실패했을 때, 재시작 시 필요한 상태를 저장한다.
+  - 데이터는 바이트 스트림 형태로 저장되기 때문에 반드시 java.io.Serializable를 구현해야한다.
 - **StepExecution**
-    - Step의 물리적인 실행을 나타낸다.
-    - Job은 여러 Step을 수행하므로 1:N 관계가 된다.
-    - 실행 이력 및 상태 정보(Chunk별 처리된 레코드 수, 성공/실패 상태 등)를 기록한다.
-    - Step이 중단되었을 때 다음에 실행할 Step 등을 결정한다.
+  - Step의 물리적인 실행을 나타낸다.
+  - Job은 여러 Step을 수행하므로 1:N 관계가 된다.
+  - 실행 이력 및 상태 정보(Chunk별 처리된 레코드 수, 성공/실패 상태 등)를 기록한다.
+  - Step이 중단되었을 때 다음에 실행할 Step 등을 결정한다.
 - **Step-ExecutionContext**
-    - Step내에서만 사용하는 데이터를 공유해야하는 영역이다.
-    - Step의 실행 중에 발생하는 상태 정보를 저장하고 재시작 시 필요한 상태를 저장한다.
-    - 데이터는 바이트 스트림 형태로 저장되기 때문에 반드시 java.io.Serializable를 구현해야한다.
+  - Step내에서만 사용하는 데이터를 공유해야하는 영역이다.
+  - Step의 실행 중에 발생하는 상태 정보를 저장하고 재시작 시 필요한 상태를 저장한다.
+  - 데이터는 바이트 스트림 형태로 저장되기 때문에 반드시 java.io.Serializable를 구현해야한다.
 - **JobRepository**
-    - 배치 실행정보나 상태, 결과정보들이 데이터베이스에 저장될 필요가 있으며 이를 처리하는 것이 JobRepository이다.
-    - 저장된 정보를 활용하여 스프링배치는 Job을 재실행 하거나, 정지된 상태 후부터 수행할 수 있는 수단을 제공한다.
+  - 배치 실행정보나 상태, 결과정보들이 데이터베이스에 저장될 필요가 있으며 이를 처리하는 것이 JobRepository이다.
+  - 저장된 정보를 활용하여 스프링배치는 Job을 재실행 하거나, 정지된 상태 후부터 수행할 수 있는 수단을 제공한다.
 
 | **항목**        | **Execution**                          | **ExecutionContext**                             |
 |---------------|----------------------------------------|--------------------------------------------------|
@@ -148,18 +148,18 @@ image:
 
 @Slf4j
 public class GreetingTask implements Tasklet, InitializingBean {
-	@Override
-	public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) {
-		log.info("------------------ Task Execute -----------------");
-		log.info("GreetingTask: {}, {}", contribution, chunkContext);
+  @Override
+  public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) {
+    log.info("------------------ Task Execute -----------------");
+    log.info("GreetingTask: {}, {}", contribution, chunkContext);
 
-		return RepeatStatus.FINISHED;
-	}
+    return RepeatStatus.FINISHED;
+  }
 
-	@Override
-	public void afterPropertiesSet() {
-		log.info("----------------- After Properites Sets() --------------");
-	}
+  @Override
+  public void afterPropertiesSet() {
+    log.info("----------------- After Properites Sets() --------------");
+  }
 }
 ```
 
@@ -170,31 +170,31 @@ public class GreetingTask implements Tasklet, InitializingBean {
 @Slf4j
 @Configuration
 public class BasicTaskJobConfiguration {
-	@Autowired
-	PlatformTransactionManager transactionManager;
+  @Autowired
+  PlatformTransactionManager transactionManager;
 
-	@Bean
-	public Tasklet greetingTasklet() {
-		return new GreetingTask();
-	}
+  @Bean
+  public Tasklet greetingTasklet() {
+    return new GreetingTask();
+  }
 
-	@Bean
-	public Step step(JobRepository jobRepository) {
-		log.info("------------------ Init myStep -----------------");
+  @Bean
+  public Step step(JobRepository jobRepository) {
+    log.info("------------------ Init myStep -----------------");
 
-		return new StepBuilder("myStep", jobRepository)
-			.tasklet(greetingTasklet(), transactionManager)
-			.build();
-	}
+    return new StepBuilder("myStep", jobRepository)
+      .tasklet(greetingTasklet(), transactionManager)
+      .build();
+  }
 
-	@Bean
-	public Job myJob(JobRepository jobRepository) {
-		log.info("------------------ Init myJob -----------------");
-		return new JobBuilder("myJob", jobRepository)
-			.incrementer(new RunIdIncrementer())
-			.start(step(jobRepository))
-			.build();
-	}
+  @Bean
+  public Job myJob(JobRepository jobRepository) {
+    log.info("------------------ Init myJob -----------------");
+    return new JobBuilder("myJob", jobRepository)
+      .incrementer(new RunIdIncrementer())
+      .start(step(jobRepository))
+      .build();
+  }
 }
 ```
 

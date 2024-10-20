@@ -1,5 +1,5 @@
 ---
-title: Spring Batch 시작하기 (with DEVOCEAN)
+title: Spring Batch - 빠르게 시작하기 (with DEVOCEAN)
 date: 2024-10-07 00:00:00 +0900
 categories: [ Framework, Spring-Batch ]
 tags: [ 스프링 배치, Spring-Batch, 스프링 ]

@@ -277,6 +277,6 @@ from customer2;
 
 customer2 테이블에 데이터가 잘 들어갔는지 조회해보자.
 
-![img_5.png](img_5.png)
+![img_5.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/5_week/img_5.png)
 
 정상적으로 데이터가 저장된 것을 확인할 수 있다.

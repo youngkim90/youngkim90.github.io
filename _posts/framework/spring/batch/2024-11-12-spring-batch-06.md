@@ -61,7 +61,7 @@ Spring Batch의 `JpaPagingItemReader`와 `JpaItemWriter`로 DB 데이터를 읽�
 
 `JpaPagingItemReader`를 활용하여 db의 **customer** 테이블로 부터 데이터를 읽어들이고 **flatfile**(csv)로 저장하는 로직을 구현해보자.
 
-![img.png](img.png)
+![img.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/6_week/img.png)
 
 현재 **customer** 테이블에 등록된 데이터 정보이다. 이 age가 20보다 큰 row를 찾아와 csv에 저장해보자.
 
@@ -139,7 +139,7 @@ public class JpaPagingReaderJobConfig {
 
 ### 2-1. 실행 결과
 
-![img_1.png](img_1.png)
+![img_1.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/6_week/img_1.png)
 
 정상적으로 csv 파일에 저장된 데이터를 확인할 수 있다.
 
@@ -151,7 +151,7 @@ public class JpaPagingReaderJobConfig {
 
 `JpaItemWriter`를 활용하여 **flatfile**에서 데이터를 읽어들인 후 **customer** 테이블에 저장하는 로직을 구현해보자.
 
-![img_2.png](img_2.png)
+![img_2.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/6_week/img_2.png)
 
 일단 customer.csv 파일에 등록할 데이터를 추가해주었다.
 
@@ -220,6 +220,6 @@ public class JpaItemJobConfig {
 
 ### 3-1. 실행 결과
 
-![img_3.png](img_3.png)
+![img_3.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/6_week/img_3.png)
 
 정상적으로 **customer** 테이블에 데이터가 insert 된 것을 확인할 수 있다.

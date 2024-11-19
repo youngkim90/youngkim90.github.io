@@ -67,7 +67,7 @@ Spring Batch의 `MyBatisPagingItemReader`와 `MyBatisItemWriter`로 DB 데이터
 - `SqlSessionFactory`
   - SqlSessionTemplate 생성을 위한 팩토리 객체이다.
 - `StatementId`
-  - 실행할 MyBatis SQL 맵퍼의 스테이tement ID이다.
+  - 실행할 MyBatis SQL 맵퍼의 statement ID이다.
 - `ItemToParameterConverter`
   - 객체를 ParameterMap으로 변경할수 있다.
 

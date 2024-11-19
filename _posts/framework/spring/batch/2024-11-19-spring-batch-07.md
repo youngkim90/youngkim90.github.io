@@ -204,11 +204,11 @@ public Job CustomerJdbcCursorPagingJob(Step CustomerJdbcCursorStep, JobRepositor
 
 먼저 customer 테이블에서 읽어들일 데이터를 저장해둔다.
 
-![img.png](img.png)
+![img.png](https://github.com/youngkim90/spring-batch-study/blob/main/study/7_week/img.png)
 
 스프링배치를 실행하여 FlatFileItemWriter 빈에서 출력 파일로 지정했던 `Customer_new_v4.csv` 파일이 생성되고, 데이터가 잘 읽어왔는지 확인해보자.
 
-![img_1.png](img_1.png)
+![img_1.png](https://github.com/youngkim90/spring-batch-study/blob/main/study/7_week/img_1.png)
 
 정상적으로 csv 파일이 생성되고 데이터를 읽어온 것을 확인할 수 있다.
 
@@ -222,7 +222,7 @@ public Job CustomerJdbcCursorPagingJob(Step CustomerJdbcCursorStep, JobRepositor
 
 먼저 **customer.csv** 파일에 불러올 데이터를 저장해두자.
 
-![img_2.png](img_2.png)
+![img_2.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/7_week/img_2.png)
 
 다음에는 쿼리 매퍼 파일에 customer 테이블에 insert를 하기 위한 쿼리문을 추가한다.
 
@@ -311,6 +311,6 @@ public Job flatFileJob(Step flatFileStep, JobRepository jobRepository) {
 
 스프링 배치를 실행하여 customer.csv 파일의 데이터가 `customer2` 테이블에 잘 저장되었는지 확인해보자.
 
-![img_3.png](img_3.png)
+![img_3.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/7_week/img_3.png)
 
 정상적으로 저장된 것을 확인할 수 있다.

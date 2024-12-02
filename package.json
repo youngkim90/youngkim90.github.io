@@ -18,7 +18,8 @@
     "prewatch": "npx rimraf assets/js/dist",
     "watch": "npx rollup -c --bundleConfigAsCjs -w",
     "test": "npx stylelint _sass/**/*.scss",
-    "fixlint": "npm run test -- --fix"
+    "fixlint": "npm run test -- --fix",
+    "local": "bundle exec jekyll s -H 0.0.0.0 -l"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
@@ -27,7 +28,7 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-terser": "^0.4.4",
     "rimraf": "^5.0.5",
-    "rollup": "^4.9.6",
+    "rollup": "4.22.4",
     "rollup-plugin-license": "^3.2.0",
     "stylelint": "^16.2.1",
     "stylelint-config-standard-scss": "^13.0.0"

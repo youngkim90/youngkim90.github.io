@@ -1,17 +1,11 @@
 ---
-title: Spring Batch - CompositeItemProcessor로 여러 processor를 순차적으로 실행하기
+title: '[Spring Batch 8] CompositeItemProcessor로 여러 processor를 순차적으로 실행하기'
 date: 2024-12-02 00:00:00 +0900
 categories: [ Framework, Spring-Batch ]
 tags: [ 스프링 배치, Spring-Batch, CompositeItemProcessor ]
 image:
   path: /assets/img/logo/spring_logo.png
   content: false
----
-
-# Spring Batch Study 8
-
-*참고: [DEVOCEAN KIDO님 SpringBatch 연재 08](https://devocean.sk.com/blog/techBoardDetail.do?ID=166950)*
-
 ---
 
 Spring Batch의 `CompositeItemProcessor` 으로 여러 단계에 걸쳐 데이터를 Transform 하는 과정을 진행해본다.
@@ -152,3 +146,9 @@ customer 테이블에서 네 개의 row를 읽어서 처리하였기 때문에 p
 ![img_2.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/8_week/img_2.png)
 
 정상적으로 대문자였던 이름과 성별이 소문자로 변환되었고, 나이가 20씩 증가하여 csv 파일에 저장된 것을 확인할 수 있다.
+
+---
+
+*참고: [DEVOCEAN KIDO님 SpringBatch 연재 08](https://devocean.sk.com/blog/techBoardDetail.do?ID=166950)*
+
+---

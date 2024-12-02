@@ -1,5 +1,5 @@
 ---
-title: Spring Batch - FlatFileItemReader/FlatFileItemWriter 구현
+title: '[Spring Batch 4] FlatFileItemReader/FlatFileItemWriter 구현'
 date: 2024-10-29 00:00:00 +0900
 categories: [ Framework, Spring-Batch ]
 tags: [ 스프링 배치, Spring-Batch, FlatFileItemReader, FlatFileItemWriter ]
@@ -8,17 +8,11 @@ image:
   content: false
 ---
 
-# Spring Batch Study 4
-
-*참고: [DEVOCEAN KIDO님 SpringBatch 연재 04](https://devocean.sk.com/blog/techBoardDetail.do?ID=166828)*
-
----
-
 Spring Batch의 Chunk Model에 사용되는 `FlatFileItemReader`와 `FlatFileItemWriter`에 대해 알아보고 구현해보자.
 
 ## 1. FlatFileItemReader/FlatFileItemWriter 개요
 
-### FlatFileItemReader 개요
+### 1-1. FlatFileItemReader 개요
 
 - Spring Batch에서 제공하는 **기본 ItemReader**이다.,
 - ItemReader 인터페이스를 **구현**하며 텍스트 파일로부터 **데이터를 읽는다.**
@@ -26,7 +20,7 @@ Spring Batch의 Chunk Model에 사용되는 `FlatFileItemReader`와 `FlatFileIte
 - 설정 및 사용이 간편하며, **대규모 데이터 처리**에 효율적이다.
 - **Tokenizer**, **Filter** 등을 통해 기능을 확장할 수 있다.
 
-### FlatFileItemReader 장단점
+### 1-2. FlatFileItemReader 장단점
 
 - **장점**
   - 간단하고 효율적인 구현이 가능하다.
@@ -35,13 +29,13 @@ Spring Batch의 Chunk Model에 사용되는 `FlatFileItemReader`와 `FlatFileIte
 - **단점**
   - 복잡한 데이터 구조 처리에는 적합하지 않다.
 
-### FlatFileItemWriter 개요
+### 1-3. FlatFileItemWriter 개요
 
 - Spring Batch에서 제공하는 **기본 ItemWriter**이다.
 - ItemWriter 인터페이스를 **구현**하며 텍스트 파일로 **데이터를 출력한다.**
 - CSV, 고정 길이 파일 등 다양한 텍스트 파일 형식으로 데이터를 출력할 수 있다.
 
-### FlatFileItemWriter 장단점
+### 1-4. FlatFileItemWriter 장단점
 
 - **장점**
   - **간편성**: 텍스트 파일로 데이터를 출력하는 간편한 방법을 제공한다.
@@ -284,3 +278,9 @@ public class FlatFileItemJobConfig {
 - `flatFileItemWriter` : 객체로 매핑된 데이터를 텍스트 파일로 출력한다.
 - `flatFileStep` : `flatFileItemReader`, `itemProcessor`, `flatFileItemWriter`를 사용하여 **Step**을 생성한다.
 - `flatFileJob` : `flatFileStep`을 사용하여 **Job**을 생성한다.
+
+---
+
+*참고: [DEVOCEAN KIDO님 SpringBatch 연재 04](https://devocean.sk.com/blog/techBoardDetail.do?ID=166828)*
+
+---

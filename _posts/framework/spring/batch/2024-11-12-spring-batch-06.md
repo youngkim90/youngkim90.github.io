@@ -1,17 +1,11 @@
 ---
-title: Spring Batch - JpaPagingItemReader/JpaItemWriter 구현
+title: '[Spring Batch 6] JpaPagingItemReader/JpaItemWriter 구현'
 date: 2024-11-12 00:00:00 +0900
 categories: [ Framework, Spring-Batch ]
 tags: [ 스프링 배치, Spring-Batch, JpaPagingItemReader, JpaItemWriter ]
 image:
   path: /assets/img/logo/spring_logo.png
   content: false
----
-
-# Spring Batch Study 6
-
-*참고: [DEVOCEAN KIDO님 SpringBatch 연재 06](https://devocean.sk.com/blog/techBoardDetail.do?ID=166902)*
-
 ---
 
 Spring Batch의 `JpaPagingItemReader`와 `JpaItemWriter`로 DB 데이터를 읽고 쓰는 방법을 알아보자.
@@ -64,6 +58,8 @@ Spring Batch의 `JpaPagingItemReader`와 `JpaItemWriter`로 DB 데이터를 읽�
 ![img.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/6_week/img.png)
 
 현재 **customer** 테이블에 등록된 데이터 정보이다. 이 age가 20보다 큰 row를 찾아와 csv에 저장해보자.
+
+### 2-1. 코드 구현
 
 ```java
 
@@ -137,7 +133,7 @@ public class JpaPagingReaderJobConfig {
 - `CustomerItemProcessor`에서는 `Customer` 객체를 그대로 반환한다.
 - Step 정의시에 **Reader**, **Processor**, **Writer** 를 지정했다.
 
-### 2-1. 실행 결과
+### 2-2. 실행 및 결과
 
 ![img_1.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/6_week/img_1.png)
 
@@ -154,6 +150,8 @@ public class JpaPagingReaderJobConfig {
 ![img_2.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/6_week/img_2.png)
 
 일단 customer.csv 파일에 등록할 데이터를 추가해주었다.
+
+### 3-1. 코드 구현
 
 ```java
 
@@ -218,8 +216,14 @@ public class JpaItemJobConfig {
 - `JpaItemWriter는` JPA를 통해 데이터를 ORM 방식으로 저장하기 때문에 별도의 insert 쿼리문을 작성하지 않아도 된다.
 - `JpaItemWriterBuilder` 의 usePersist를 true로 설정하면 자동으로 데이터를 저장한다.
 
-### 3-1. 실행 결과
+### 3-2. 실행 및 결과
 
 ![img_3.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/6_week/img_3.png)
 
 정상적으로 **customer** 테이블에 데이터가 insert 된 것을 확인할 수 있다.
+
+---
+
+*참고: [DEVOCEAN KIDO님 SpringBatch 연재 06](https://devocean.sk.com/blog/techBoardDetail.do?ID=166902)*
+
+---

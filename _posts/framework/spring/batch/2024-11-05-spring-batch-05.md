@@ -1,17 +1,11 @@
 ---
-title: Spring Batch - JdbcPagingItemReader/JdbcBatchItemWriter 구현
+title: '[Spring Batch 5] JdbcPagingItemReader/JdbcBatchItemWriter 구현'
 date: 2024-11-05 00:00:00 +0900
 categories: [ Framework, Spring-Batch ]
 tags: [ 스프링 배치, Spring-Batch, JdbcPagingItemReader, JdbcBatchItemWriter ]
 image:
   path: /assets/img/logo/spring_logo.png
   content: false
----
-
-# Spring Batch Study 5
-
-*참고: [DEVOCEAN KIDO님 SpringBatch 연재 05](https://devocean.sk.com/blog/techBoardDetail.do?ID=166867)*
-
 ---
 
 Spring Batch의 `JdbcPagingItemReader`와 `JdbcBatchItemWriter`로 DB 데이터를 읽고 쓰는 방법을 알아보자.
@@ -57,6 +51,8 @@ Spring Batch의 `JdbcPagingItemReader`와 `JdbcBatchItemWriter`로 DB 데이터�
 ## 2. JdbcPagingItemReader 구현
 
 `JdbcPagingItemReader`를 활용하여 db의 **customer** 테이블로 부터 데이터를 읽어들이고 **flatfile**(csv)로 저장하는 로직을 구현해보자.
+
+### 2-1. 코드 구현
 
 ```java
 
@@ -150,7 +146,7 @@ public class JdbcPagingReaderJobConfig {
 - `FlatFileItemWriter` 빈을 등록하여 **output** 디렉토리에 **customer_new_v1.csv** 파일을 생성한다.
 - `Job`, `Step` 빈을 생성하고 **chunk**, **reader**, **writer**를 설정한다.
 
-### 2-1. 실행 결과
+### 2-2. 실행 및 결과
 
 ![img_1.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/5_week/img_1.png)
 
@@ -182,12 +178,14 @@ create table study.customer2
 (
   id     int auto_increment primary key,
   name   varchar(100) null,
-  age    int          null,
-  gender varchar(10)  null
+  age    int null,
+  gender varchar(10) null
 );
 ```
 
 읽어들인 데이터를 저장할 테이블도 생성한다.
+
+### 3-1. 코드 구현
 
 ```java
 
@@ -264,7 +262,7 @@ public class CustomerItemSqlParameterSourceProvider implements ItemSqlParameterS
 - `Job`, `Step` 빈을 생성하고 **chunk**, **reader**, **writer**를 설정한다.
 - `CustomerItemSqlParameterSourceProvider` 클래스를 생성하여 **itemSqlParameterSourceProvider**를 구현한다.
 
-### 3-1. 실행 결과
+### 3-1. 실행 및 결과
 
 ![img_4.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/5_week/img_4.png)
 
@@ -280,3 +278,9 @@ customer2 테이블에 데이터가 잘 들어갔는지 조회해보자.
 ![img_5.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/5_week/img_5.png)
 
 정상적으로 데이터가 저장된 것을 확인할 수 있다.
+
+---
+
+*참고: [DEVOCEAN KIDO님 SpringBatch 연재 05](https://devocean.sk.com/blog/techBoardDetail.do?ID=166867)*
+
+---

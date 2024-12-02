@@ -1,17 +1,11 @@
 ---
-title: Spring Batch - MyBatisPagingItemReader/MyBatisItemWriter 구현
+title: '[Spring Batch 7] MyBatisPagingItemReader/MyBatisItemWriter 구현'
 date: 2024-11-19 00:00:00 +0900
 categories: [ Framework, Spring-Batch ]
 tags: [ 스프링 배치, Spring-Batch, MyBatisPagingItemReader, MyBatisItemWriter ]
 image:
   path: /assets/img/logo/spring_logo.png
   content: false
----
-
-# Spring Batch Study 7
-
-*참고: [DEVOCEAN KIDO님 SpringBatch 연재 07](https://devocean.sk.com/blog/techBoardDetail.do?ID=166932)*
-
 ---
 
 Spring Batch의 `MyBatisPagingItemReader`와 `MyBatisItemWriter`로 DB 데이터를 읽고 쓰는 방법을 알아보자.
@@ -126,6 +120,8 @@ mybatis:
   mapper-locations: classpath:/mappers/**/*.xml
 ```
 
+### 2-1. 코드 구현
+
 `MyBatisPagingItemReader` 빈을 구현해보자.
 
 ```java
@@ -200,7 +196,7 @@ public Job CustomerJdbcCursorPagingJob(Step CustomerJdbcCursorStep, JobRepositor
 }
 ```
 
-### 2-1. 실행 결과
+### 2-2. 실행 및 결과
 
 먼저 customer 테이블에서 읽어들일 데이터를 저장해둔다.
 
@@ -234,6 +230,8 @@ public Job CustomerJdbcCursorPagingJob(Step CustomerJdbcCursorStep, JobRepositor
 </insert>
   </mapper>
 ```
+
+### 3-1. 코드 구현
 
 `MyBatisItemWriter` 빈을 구현해보자.
 
@@ -307,10 +305,16 @@ public Job flatFileJob(Step flatFileStep, JobRepository jobRepository) {
 }
 ```
 
-### 3-1. 실행 결과
+### 3-2. 실행 및 결과
 
 스프링 배치를 실행하여 customer.csv 파일의 데이터가 `customer2` 테이블에 잘 저장되었는지 확인해보자.
 
 ![img_3.png](https://github.com/youngkim90/spring-batch-study/raw/main/study/7_week/img_3.png)
 
 정상적으로 저장된 것을 확인할 수 있다.
+
+---
+
+*참고: [DEVOCEAN KIDO님 SpringBatch 연재 07](https://devocean.sk.com/blog/techBoardDetail.do?ID=166932)*
+
+---

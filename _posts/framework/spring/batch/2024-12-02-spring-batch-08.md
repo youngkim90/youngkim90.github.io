@@ -128,7 +128,7 @@ public class MyBatisReaderJobConfig {
   전달한다.
 - step의 processor 설정에 **compositeItemProcessor** 빈을 전달한다.
 
-### 2-1. 실행 및 결과
+### 2-2. 실행 및 결과
 
 먼저 customer 테이블의 데이터를 확인해보자.
 

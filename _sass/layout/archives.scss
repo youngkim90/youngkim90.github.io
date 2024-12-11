@@ -97,7 +97,7 @@
   }
 
   li[data-month="Mar"] {
-    --month-color: #c7c700;
+    --month-color: #a9a900;
   }
 
   li[data-month="Apr"] {
@@ -153,6 +153,7 @@
     &.day {
       font-size: 85%;
       font-family: Lato, sans-serif;
+      color: var(--month-color) !important;
     }
   }
 

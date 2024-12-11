@@ -65,12 +65,12 @@
       &:nth-child(odd) {
         background-color: var(--main-bg, #ffffff);
         background-image: linear-gradient(
-          to left,
-          #ffffff,
-          #fbfbfb,
-          #fbfbfb,
-          #fbfbfb,
-          #ffffff
+            to left,
+            #ffffff,
+            #fbfbfb,
+            #fbfbfb,
+            #fbfbfb,
+            #ffffff
         );
       }
 
@@ -86,7 +86,57 @@
     &:last-child li:last-child::before {
       height: 1.5rem;
     }
-  } /* #archives ul */
+  }
+
+  li[data-month="Jan"] {
+    --month-color: #ee6b6b;
+  }
+
+  li[data-month="Feb"] {
+    --month-color: #c26000;
+  }
+
+  li[data-month="Mar"] {
+    --month-color: #c7c700;
+  }
+
+  li[data-month="Apr"] {
+    --month-color: #60c700;
+  }
+
+  li[data-month="May"] {
+    --month-color: #00ad00;
+  }
+
+  li[data-month="Jun"] {
+    --month-color: #005b2d;
+  }
+
+  li[data-month="Jul"] {
+    --month-color: #00adad;
+  }
+
+  li[data-month="Aug"] {
+    --month-color: #0063cc;
+  }
+
+  li[data-month="Sep"] {
+    --month-color: #000081;
+  }
+
+  li[data-month="Oct"] {
+    --month-color: #6100c4;
+  }
+
+  li[data-month="Nov"] {
+    --month-color: #d500d5;
+  }
+
+  li[data-month="Dec"] {
+    --month-color: #bb0057;
+  }
+
+  /* #archives ul */
 
   .date {
     white-space: nowrap;
@@ -97,6 +147,7 @@
     &.month {
       width: 1.4rem;
       text-align: center;
+      color: var(--month-color) !important;
     }
 
     &.day {
@@ -126,12 +177,14 @@
       float: left;
       top: 1.35rem;
       left: 71px;
-      background-color: var(--timeline-node-bg);
+      background-color: var(--month-color);
       box-shadow: 0 0 3px 0 #c2c6cc;
       z-index: 1;
     }
   }
-} /* #archives */
+}
+
+/* #archives */
 
 @media all and (max-width: 576px) {
   #archives {

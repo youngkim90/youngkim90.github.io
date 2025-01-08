@@ -1,6 +1,6 @@
 ---
 title: 스프링부트 Quartz 스케줄링 활용하기
-date: 2025-01-07 00:00:00 +0900
+date: 2025-01-06 00:00:00 +0900
 categories: [ Framework, SpringBoot ]
 tags: [ 스프링부트, QUARTZ, 스케줄링 ]
 image:
